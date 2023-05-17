@@ -1,33 +1,48 @@
+import { useEffect, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import Card from "../Card/Card";
 
 
 const ReactTabSection = () => {
-    return (
-     
-            <Tabs className={'w-full'}>
-                <div className="">
-                <TabList className={' flex'}>
-                    <Tab>Title 1</Tab>
-                    <Tab>Title 2</Tab>
-                    <Tab>Title 3</Tab>
-                    <Tab>Title 4</Tab>
-                </TabList>
-                </div>
+    const [catagory, setCatagory] = useState([]);
 
-                <TabPanel>
-                    <h2>Any content 1</h2>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Any content 2</h2>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Any content 3</h2>
-                </TabPanel>
-                <TabPanel>
-                    <h2>Any content 4</h2>
-                </TabPanel>
-            </Tabs>
-        
+
+    useEffect(() => {
+        fetch('http://localhost:5000/catagory')
+            .then(res => res.json())
+            .then(data => setCatagory(data))
+    }, [])
+
+
+
+    return (
+
+        <Tabs className={'w-full'}>
+            <div className="">
+                <TabList className={' flex gap-5'}>
+                    <Tab className='btn'>sports car</Tab>
+                    <Tab className='btn'>truck</Tab>
+                    <Tab className='btn'>mini fire truck</Tab>
+                </TabList>
+            </div>
+
+            <TabPanel>
+                <div className="mx-auto  lg:flex gap-5 m-5 ">
+                    {catagory.slice(0, 2).map((singleData, index) => <Card key={index} singleData={singleData}></Card>)}
+                </div>
+            </TabPanel>
+            <TabPanel>
+               <div className="mx-auto  lg:flex gap-5 m-5">
+               {catagory.slice(2, 4).map((singleData, index) => <Card key={index} singleData={singleData}></Card>)}
+               </div>
+            </TabPanel>
+            <TabPanel>
+                <div className="mx-auto lg:flex gap-5 m-5">
+                {catagory.slice(4, 6).map((singleData, index) => <Card key={index} singleData={singleData}></Card>)}
+                </div>
+            </TabPanel>
+        </Tabs>
+
     );
 };
 
