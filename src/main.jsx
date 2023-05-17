@@ -7,8 +7,10 @@ import { router } from './router/Router.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}>
+    <div className="mx-20">
+      <RouterProvider router={router}>
 
-    </RouterProvider>
+      </RouterProvider>
+    </div>
   </React.StrictMode>,
 )

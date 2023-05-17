@@ -14,11 +14,19 @@ const Navbar = () => {
                         <li><a>Item 3</a></li>
                     </ul>
                 </div>
-                <h1 className="btn btn-ghost normal-case text-xl flex gap-1">Toy<span className="font-thin"> For </span> Kids</h1>
+
+                <div className="flex justify-center items-center">
+                    <img src="https://seeklogo.com/images/T/toy-story-3-logo-D2E22F3746-seeklogo.com.png" alt="" className="w-10 h-10" />
+                    <h1 className="btn btn-ghost normal-case text-2xl">ToY<span className="font-thin m-1">Story</span><span className="text-3xl text-orange-400">3</span></h1>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal flex gap-3">
                     <Link to="/"><li>Home</li></Link>
+                    <Link to="/"><li>All Toy</li></Link>
+                    <Link to="/"><li>My Toy</li></Link>
+                    <Link to="/"><li>Add A Toy</li></Link>
+                    <Link to="/"><li>Blogs</li></Link>
                 </ul>
             </div>
             <div className="navbar-end">
