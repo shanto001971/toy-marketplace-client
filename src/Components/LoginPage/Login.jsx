@@ -1,22 +1,25 @@
 import { useContext } from "react";
 import { AuthContex } from "../../AuthProvider/AuthProvider";
+import { useState } from "react";
 
 
 const Login = () => {
-    const { createUser,setUser } = useContext(AuthContex);
+    const { createUser, setUser, LoginUser } = useContext(AuthContex);
+    const [error, setError] = useState();
     const handelForm = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
-        LoginUser(email,password)
-        .then((result)=>{
-            setUser(result.user)
-        })
-        .catch((err)=>{
-            console.log(err)
-        })
+        LoginUser(email, password)
+            .then((result) => {
+                setUser(result.user)
+                form.reset()
+            })
+            .catch((err) => {
+                setError(err)
+            })
 
     }
     return (
@@ -33,7 +36,7 @@ const Login = () => {
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="text" name="password" placeholder="password" className="input input-bordered" />
+                        <input type="Password" name="password" placeholder="password" className="input input-bordered" />
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Login</button>

@@ -3,6 +3,7 @@ import Layout from "../Components/Layout/Layout";
 import Home from "../Components/HomePage/Home";
 import Login from "../Components/LoginPage/Login";
 import Ragister from "../Components/ragister/Ragister";
+import AddToy from "../Components/AddToy/AddToy";
 
 export const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
         {
             path:"/register",
             element:<Ragister></Ragister>
+        },
+        {
+            path:"/addtoy",
+            element:<AddToy/>
         },
        
 
