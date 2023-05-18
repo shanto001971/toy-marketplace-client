@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContex } from "../../AuthProvider/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 const Ragister = () => {
@@ -65,10 +66,13 @@ const Ragister = () => {
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn bg-orange-300 hover:bg-orange-400">Login</button>
+                        
                     </div>
+                    <p>Alradey have a account <Link to="/login" className="link">Ragister</Link></p>
                 </form>
+                
             </div>
-
+        
         </div>
     );
 };
