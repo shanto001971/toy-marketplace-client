@@ -5,13 +5,18 @@ import { AuthContex } from "../../AuthProvider/AuthProvider";
 
 const AddToy = () => {
 
-    const {user}=useContext(AuthContex);
+    const { user } = useContext(AuthContex);
+
+    const handelUpdateProduct = (event) => {
+        event.preventDefault()
+
+    }
 
     return (
         <div className="hero min-h-screen bg-base-200">
 
             <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
-                <div className="card-body">
+                <form className="card-body">
                     <div className="lg:flex gap-5">
 
                         <div className="form-control w-full">
@@ -40,7 +45,7 @@ const AddToy = () => {
 
                         <div className="form-control w-full">
                             <label className="label">
-                                <span className="label-text">Name</span>
+                                <span className="label-text">Product Name</span>
                             </label>
                             <input type="text" placeholder="Name" className="input input-bordered w-full" />
                         </div>
@@ -91,7 +96,7 @@ const AddToy = () => {
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Login</button>
                     </div>
-                </div>
+                </form>
             </div>
 
         </div>

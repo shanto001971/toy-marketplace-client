@@ -35,8 +35,9 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal flex gap-3">
                     <Link to="/"><li>Home</li></Link>
                     <Link to="/"><li>All Toy</li></Link>
-                    {user?.email ? <><Link to="/"><li>My Toy</li></Link>
-                        <Link to="/addtoy"><li>Add A Toy</li></Link></> : ''}
+                    <Link to="/addtoy"><li>Add A Toy</li></Link>
+                    {user?.email ? <Link to="/"><li>My Toy</li></Link>
+                         : <></>}
                     <Link to="/"><li>Blogs</li></Link>
                 </ul>
             </div>
