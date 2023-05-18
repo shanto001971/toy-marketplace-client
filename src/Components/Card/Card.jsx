@@ -8,6 +8,7 @@ console.log(singleData)
             <div className="card-body">
                 <h2 className="card-title">{singleData?.Name}</h2>
                 <p>Price ${singleData?.Price}</p>
+                <p>{singleData?.Rating}</p>
                 <div className="card-actions w-full">
                     <button className="btn btn-primary w-full">Buy Now</button>
                 </div>

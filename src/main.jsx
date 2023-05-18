@@ -4,13 +4,15 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './router/Router.jsx'
+import AuthProvider from './AuthProvider/AuthProvider'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div className="mx-20">
-      <RouterProvider router={router}>
-
-      </RouterProvider>
+    <div className="lg:mx-20">
+      <AuthProvider>
+        <RouterProvider router={router}>
+        </RouterProvider>
+      </AuthProvider>
     </div>
   </React.StrictMode>,
 )
