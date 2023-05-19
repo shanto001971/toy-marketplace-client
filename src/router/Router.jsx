@@ -33,11 +33,13 @@ export const router = createBrowserRouter([
       },
       {
         path: "/allToy",
-        element: <AllToy/>
+        element: <AllToy />
       },
       {
         path: "/mytoy",
-        element: <MyToy/>
+        element: <PrivetRoute>
+          <MyToy />
+        </PrivetRoute>
       },
 
 
