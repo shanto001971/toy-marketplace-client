@@ -5,6 +5,8 @@ import Login from "../Components/LoginPage/Login";
 import Ragister from "../Components/ragister/Ragister";
 import AddToy from "../Components/AddToy/AddToy";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
+import AllToy from "../Components/AllToy/AllToy";
+import MyToy from "../Components/MyToy/MyToy";
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +30,14 @@ export const router = createBrowserRouter([
         element: <PrivetRoute>
           <AddToy />
         </PrivetRoute>
+      },
+      {
+        path: "/allToy",
+        element: <AllToy/>
+      },
+      {
+        path: "/mytoy",
+        element: <MyToy/>
       },
 
 
