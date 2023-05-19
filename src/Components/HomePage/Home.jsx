@@ -1,6 +1,3 @@
-// import Marquee from "react-fast-marquee";
-// import Gallery from "../GallerySection/Gallery";
-// import ReactTabSection from "../ReactTab/ReactTabSection";
 import Carousel from "./Carousel/Carousel";
 import GalleryMarque from "../GallerySection/GalleryMarque";
 import Banner from "../Banner/Banner";
