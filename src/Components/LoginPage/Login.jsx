@@ -22,7 +22,7 @@ const Login = () => {
                 setUser(result.user)
                 console.log(result.user)
                 form.reset()
-                navigate(from, { replace: true });
+                // navigate(from, { replace: true });
             })
             .catch((err) => {
                 setError(err)
@@ -33,7 +33,7 @@ const Login = () => {
         loginWithGoogle()
             .then((result) => {
                 setUser(result.user)
-                navigate(from, { replace: true });
+                // navigate(from, { replace: true });/
             })
             .catch((err) => {
                 setError(err.message)

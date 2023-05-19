@@ -9,6 +9,29 @@ const AddToy = () => {
 
     const handelUpdateProduct = (event) => {
         event.preventDefault()
+        const from = event.target;
+        const photo = from.photo.value;
+        const sellerName = from.sellerName.value;
+        const email = from.email.value;
+        const productName = from.productName.value;
+        const subCategory = from.subCategory.value;
+        const price = from.price.value;
+        const rating = from.rating.value;
+        const availableQuantity = from.availableQuantity.value;
+        const detailDescription = from.detailDescription.value;
+
+        const postToys = {
+            photo,
+            sellerName,
+            email,
+            productName,
+            subCategory,
+            price,
+            rating,
+            availableQuantity,
+            detailDescription
+        }
+        console.log(postToys)
 
     }
 
@@ -16,21 +39,21 @@ const AddToy = () => {
         <div className="hero min-h-screen bg-base-200">
 
             <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
-                <form className="card-body">
+                <form onSubmit={handelUpdateProduct} className="card-body">
                     <div className="lg:flex gap-5">
 
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Picture URL of the toy</span>
                             </label>
-                            <input type="text" placeholder="Picture URL of the toy" className="input input-bordered w-full" />
+                            <input type="text" name="photo" placeholder="Picture URL of the toy" className="input input-bordered w-full" />
                         </div>
 
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">seller name</span>
                             </label>
-                            <input type="text" placeholder="Name" defaultValue={user?.displayName} className="input input-bordered w-full" />
+                            <input type="text" name="sellerName" placeholder="Name" defaultValue={user?.displayName} className="input input-bordered w-full" />
                         </div>
 
                     </div>
@@ -40,14 +63,14 @@ const AddToy = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="text" placeholder="" defaultValue={user?.email} className="input input-bordered w-full" />
+                            <input type="text" name="email" placeholder="" defaultValue={user?.email} className="input input-bordered w-full" />
                         </div>
 
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Product Name</span>
                             </label>
-                            <input type="text" placeholder="Name" className="input input-bordered w-full" />
+                            <input type="text" name="productName" placeholder="Name" className="input input-bordered w-full" />
                         </div>
 
                     </div>
@@ -57,14 +80,14 @@ const AddToy = () => {
                             <label className="label">
                                 <span className="label-text">Sub-category</span>
                             </label>
-                            <input type="text" placeholder="Sub-category" className="input input-bordered w-full" />
+                            <input type="text" name="subCategory" placeholder="Sub-category" className="input input-bordered w-full" />
                         </div>
 
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Price</span>
                             </label>
-                            <input type="text" placeholder="Price" className="input input-bordered w-full" />
+                            <input type="text" name="price" placeholder="Price" className="input input-bordered w-full" />
                         </div>
 
                     </div>
@@ -74,14 +97,14 @@ const AddToy = () => {
                             <label className="label">
                                 <span className="label-text">Rating</span>
                             </label>
-                            <input type="text" placeholder="Rating" className="input input-bordered w-full" />
+                            <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" />
                         </div>
 
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Available quantity</span>
                             </label>
-                            <input type="text" placeholder="Available quantity" className="input input-bordered w-full" />
+                            <input type="text" name="availableQuantity" placeholder="Available quantity" className="input input-bordered w-full" />
                         </div>
 
                     </div>
@@ -89,12 +112,12 @@ const AddToy = () => {
                         <label className="label">
                             <span className="label-text">Detail description</span>
                         </label>
-                        <input type="text" placeholder="Detail description" className="input input-bordered w-full" />
+                        <input type="text" name="detailDescription" placeholder="Detail description" className="input input-bordered w-full" />
                     </div>
 
 
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Login</button>
+                        <button  type='submit' className="btn btn-primary">Add Toy</button>
                     </div>
                 </form>
             </div>
