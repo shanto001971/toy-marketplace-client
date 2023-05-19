@@ -4,15 +4,19 @@ import MyToyTable from './MyToyTable/MyToyTable';
 
 const MyToy = () => {
     const { user } = useContext(AuthContex);
-    const [myToy, setMyToy] = useState([]);
+    // const [myToy, setMyToy] = useState([]);
+    // console.log(user.email)
+    // console.log(myToy)
 
-    const url = `http://localhost:5000/category?email=${user.email}`;
+    // const url = `http://localhost:5000/category?email=${user?.email}`;
 
-    useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setMyToy(data))
-    }, [])
+    // console.log(url)
+
+    // useEffect(() => {
+    //     fetch(url)
+    //         .then(res => res.json())
+    //         .then(data => setMyToy(data))
+    // }, [url])
 
     return (
         <div>
@@ -30,7 +34,7 @@ const MyToy = () => {
                     </thead>
                     <tbody>
                         {
-                            myToy.map(singleData=><MyToyTable key={singleData} singleData={singleData}/>)
+                            myToy.map(singleData => <MyToyTable key={singleData._id} singleData={singleData} />)
                         }
                     </tbody>
                 </table>

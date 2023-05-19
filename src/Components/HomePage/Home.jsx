@@ -1,6 +1,7 @@
 import Carousel from "./Carousel/Carousel";
 import GalleryMarque from "../GallerySection/GalleryMarque";
 import Banner from "../Banner/Banner";
+import ReactTabSection from "../ReactTab/ReactTabSection";
 
 
 
@@ -15,6 +16,7 @@ const Home = () => {
             <GalleryMarque/>
            </div>
            </div>
+           <ReactTabSection/>
            <Banner/>
 
         </div>
