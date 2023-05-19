@@ -4,19 +4,35 @@ import MyToyTable from './MyToyTable/MyToyTable';
 
 const MyToy = () => {
     const { user } = useContext(AuthContex);
-    // const [myToy, setMyToy] = useState([]);
-    // console.log(user.email)
-    // console.log(myToy)
+    const [myToy, setMyToy] = useState([]);
+    console.log(user.email)
+    console.log(myToy)
 
-    // const url = `http://localhost:5000/category?email=${user?.email}`;
+    const url = `http://localhost:5000/toys/my?email=${user?.email}`;
 
-    // console.log(url)
+    console.log(url)
 
-    // useEffect(() => {
-    //     fetch(url)
-    //         .then(res => res.json())
-    //         .then(data => setMyToy(data))
-    // }, [url])
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setMyToy(data))
+    }, [url])
+
+    const handleRemove = id => {
+
+        fetch(`http://localhost:5000/toys/my/${id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    alart('deleted')
+                    
+                }
+            })
+    }
+
+
 
     return (
         <div>
@@ -34,7 +50,7 @@ const MyToy = () => {
                     </thead>
                     <tbody>
                         {
-                            myToy.map(singleData => <MyToyTable key={singleData._id} singleData={singleData} />)
+                            myToy.map(singleData => <MyToyTable key={singleData._id} singleData={singleData} handleRemove={handleRemove}/>)
                         }
                     </tbody>
                 </table>

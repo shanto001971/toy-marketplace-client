@@ -19,15 +19,9 @@ const AllToy = () => {
     const handleSearchBtn = (event) => {
         event.preventDefault()
         const productName = event.target.name.value;
-        // setSearch(productName);
         const filterData = alltoy.filter(a => a.productName === productName)
         setFilterToys(filterData)
-        // const filteredToys = alltoy?.filter((toy) => {
-        //     console.log(toy)
-        //     toy.toLowerCase().includes(productName.toLowerCase())
-        // }
-        // );
-        // setFilterToys(filteredToys);
+      
     };
 
     return (
