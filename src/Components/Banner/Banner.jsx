@@ -1,9 +1,10 @@
 import React from 'react';
+import { FaArrowRight } from 'react-icons/fa';
 
 const Banner = () => {
     return (
         <div className="my-20">
-            <div className="t border p-5">
+            <div className="t border p-10">
                 <h1 className='text-4xl font-serif'>Baby Toy Car New Collection</h1>
                 
                 <p className='text-2xl mt-3'>Every New Toy collection is Available Hare</p>
@@ -17,7 +18,10 @@ const Banner = () => {
                 <h1 className='text-2xl'>How Much is Baby Toy Car</h1>
                 <p>$5,580.84 NGN <span className='text-lime-500'> In stock</span> Brand: Solaroid Energy</p>
                 <small>Baby Toy Car is a cute toy that is made of durable plastic and features a soft, cuddly body. It's the perfect size for little hands to grasp, and it ...</small>
+                <br />
+                <button className='px-6 py-2 text-blue-100 rounded bg-gradient-to-r from-blue-600 to-blue-400 mt-5 flex justify-center items-center gap-5'>Explore <FaArrowRight/></button>
                 </div>
+
             </div>
         </div>
         </div>

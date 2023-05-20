@@ -1,6 +1,7 @@
 import React from 'react';
 import { useContext } from "react";
 import { AuthContex } from "../../AuthProvider/AuthProvider";
+import { toast } from 'react-hot-toast';
 
 
 const AddToy = () => {
@@ -41,7 +42,11 @@ const AddToy = () => {
             body: JSON.stringify(postToys)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if (data.acknowledged === true) {
+                    toast("Added Your toy")
+                }
+            })
 
     }
 

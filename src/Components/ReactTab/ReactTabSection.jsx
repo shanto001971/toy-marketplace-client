@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
-import Category from "./Category/Category";
+
 
 
 
@@ -15,7 +15,7 @@ const ReactTabSection = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/category')
+        fetch('http://localhost:5000/alltoys')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
@@ -25,9 +25,9 @@ const ReactTabSection = () => {
     return (
 
        <div className="text-center">
-        <div className="my-10 border p-5 text-end">
+        <div className="my-10 border p-10 text-end">
             <h1 className="text-4xl font-serif">Select Your Favorite Category</h1>
-            <p className="text-2xl font-mono mt-3">Some Best Toy Category is Hare You Can See Your Favorite Toy</p>
+            <p className="text-2xl font-thin mt-3">Some Best Toy Category is Hare You Can See Your Favorite Toy</p>
         </div>
          <Tabs forceRenderTabPanel defaultIndex={1} className={'mt-20'}>
             <TabList cl>

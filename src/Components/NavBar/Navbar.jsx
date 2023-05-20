@@ -33,17 +33,17 @@ const Navbar = () => {
 
                 <div className="flex justify-center items-center">
                     <img src="https://seeklogo.com/images/T/toy-story-3-logo-D2E22F3746-seeklogo.com.png" alt="" className="w-10 h-10" />
-                    <h1 className="btn btn-ghost normal-case text-2xl">ToY<span className="font-thin m-1">Store</span><span className="text-3xl text-orange-400">3</span></h1>
+                    <h1 className="btn btn-ghost normal-case text-2xl font-serif">ToY<span className="font-thin m-1">Store</span><span className="text-3xl text-orange-400">3</span></h1>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal flex gap-3">
-                    <Link className="font-thin" to="/"><li>Home</li></Link>
-                    <Link className="font-thin" to="/allToy"><li>All Toy</li></Link>
-                    <Link className="font-thin" to="/addtoy"><li>Add A Toy</li></Link>
-                    {user?.email ? <Link className="font-thin" to="/mytoy"><li>My Toy</li></Link>
+                    <Link className="font-serif" to="/"><li>Home</li></Link>
+                    <Link className="font-serif" to="/allToy"><li>All Toy</li></Link>
+                    <Link className="font-serif" to="/addtoy"><li>Add A Toy</li></Link>
+                    {user?.email ? <Link className="font-serif" to="/mytoy"><li>My Toy</li></Link>
                         : <></>}
-                    <Link className="font-thin" to="/"><li>Blogs</li></Link>
+                    <Link className="font-serif" to="/"><li>Blogs</li></Link>
                 </ul>
             </div>
             <div className="navbar-end">

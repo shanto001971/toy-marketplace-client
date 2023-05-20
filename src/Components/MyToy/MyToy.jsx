@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContex } from '../../AuthProvider/AuthProvider';
 import MyToyTable from './MyToyTable/MyToyTable';
+import { toast } from 'react-hot-toast';
 
 const MyToy = () => {
     const { user } = useContext(AuthContex);
     const [myToy, setMyToy] = useState([]);
-    console.log(user.email)
-    console.log(myToy)
+    const [lod, setLod] = useState(false);
 
     const url = `http://localhost:5000/toys/my?email=${user?.email}`;
 
@@ -16,7 +16,7 @@ const MyToy = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setMyToy(data))
-    }, [url])
+    }, [lod])
 
     const handleRemove = id => {
 
@@ -25,9 +25,14 @@ const MyToy = () => {
         })
             .then(res => res.json())
             .then(data => {
+
                 if (data.deletedCount > 0) {
-                    alart('deleted')
+                    if (data.acknowledged=== true) {
+                        setLod(true)
+                    }
+                    return toast('DELETE Successfuly')
                     
+
                 }
             })
     }
@@ -50,7 +55,7 @@ const MyToy = () => {
                     </thead>
                     <tbody>
                         {
-                            myToy.map(singleData => <MyToyTable key={singleData._id} singleData={singleData} handleRemove={handleRemove}/>)
+                            myToy.map(singleData => <MyToyTable key={singleData._id} singleData={singleData} handleRemove={handleRemove} />)
                         }
                     </tbody>
                 </table>
