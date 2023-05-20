@@ -1,7 +1,12 @@
 import React from 'react';
+import { toast } from 'react-hot-toast';
+import { useLoaderData } from 'react-router-dom';
 
 const UpdateProduct = () => {
 
+    const data = useLoaderData()
+    const { _id, price, availableQuantity, detailDescription } = data
+    console.log(data)
 
     const handelUpdateData = (event) => {
         event.preventDefault()
@@ -17,8 +22,8 @@ const UpdateProduct = () => {
         }
         console.log(update)
 
-        fetch('http://localhost:5000/toy', {
-            method: 'PATCH',
+        fetch(`http://localhost:5000/alltoys/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
@@ -26,7 +31,11 @@ const UpdateProduct = () => {
 
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if (data.modifiedCount) {
+                    toast('update Successfully')
+                }
+            })
 
 
     }
@@ -51,14 +60,14 @@ const UpdateProduct = () => {
                                 <label className="label">
                                     <span className="label-text">Price</span>
                                 </label>
-                                <input type="text" name="price" placeholder="price" className="input input-bordered w-full" />
+                                <input type="text" name="price" defaultValue={price} placeholder="price" className="input input-bordered w-full" />
                             </div>
 
                             <div className="form-control w-full">
                                 <label className="label">
                                     <span className="label-text">Available quantity</span>
                                 </label>
-                                <input type="text" name="availableQuantity" placeholder="Available quantity" className="input input-bordered w-full" />
+                                <input type="text" name="availableQuantity" defaultValue={availableQuantity} placeholder="Available quantity" className="input input-bordered w-full" />
                             </div>
 
                         </div>
@@ -66,7 +75,7 @@ const UpdateProduct = () => {
                             <label className="label">
                                 <span className="label-text">Detail description</span>
                             </label>
-                            <input type="text" name="detailDescription" placeholder="Detail description" className="input input-bordered w-full" />
+                            <input type="text" name="detailDescription" defaultValue={detailDescription} placeholder="Detail description" className="input input-bordered w-full" />
                         </div>
 
 

@@ -47,8 +47,9 @@ export const router = createBrowserRouter([
         </PrivetRoute>
       },
       {
-        path: "/update/:id",
-        element: <UpdateProduct />
+        path: "/alltoys/:id",
+        element: <UpdateProduct />,
+        loader:({params})=>fetch(`http://localhost:5000/alltoys/${params.id}`)
       },
       {
         path: "/blog",
