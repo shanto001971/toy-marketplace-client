@@ -4,7 +4,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 const NumberThreeBanner = () => {
     return (
         <div className="">
-            <div className="my-10 border p-10 text-center">
+            <div className="my-10 border p-10 text-right">
                 <h1 className='text-4xl font-serif'>Driving Imagination</h1>
                 <p className='font-thin'>Exploring the Fascinating Universe of Toy Sports Cars</p>
             </div>

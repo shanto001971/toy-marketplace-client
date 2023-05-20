@@ -25,6 +25,10 @@ const AllToy = () => {
       
     };
 
+    useEffect(() => {
+        document.title = 'ToyStore | AllToy';
+    }, []);
+    
     return (
         <div>
             <form onSubmit={handleSearchBtn} className='flex items-center justify-center gap-4 my-6'>

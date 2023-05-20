@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContex } from "../../AuthProvider/AuthProvider";
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -42,6 +42,11 @@ const Login = () => {
                 setError(err.message)
             })
     }
+
+
+    useEffect(() => {
+        document.title = 'ToyStore | Login';
+    }, []);
     return (
         <div className="hero  lg:min-h-screen bg-base-200">
             <form onSubmit={handelForm} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

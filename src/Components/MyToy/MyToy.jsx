@@ -38,6 +38,10 @@ const MyToy = () => {
     }
 
 
+    useEffect(() => {
+        document.title = 'ToyStore | MyToy';
+    }, []);
+
 
     return (
         <div>

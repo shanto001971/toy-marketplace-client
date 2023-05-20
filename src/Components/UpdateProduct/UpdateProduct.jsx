@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { toast } from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 
@@ -41,7 +41,9 @@ const UpdateProduct = () => {
     }
 
 
-
+    useEffect(() => {
+        document.title = 'ToyStore | Update';
+    }, []);
 
     return (
         <div className="">

@@ -5,16 +5,25 @@ import ReactTabSection from "../ReactTab/ReactTabSection";
 import NumberThreeBanner from "../Banner/NumberThreeBanner";
 import { useContext } from "react";
 import { AuthContex } from "../../AuthProvider/AuthProvider";
+import { useEffect } from 'react';
+
 
 
 
 const Home = () => {
     const { loding } = useContext(AuthContex)
+
+    useEffect(() => {
+        document.title = 'ToyStore | Home';
+    }, []);
+
     {
         if (loding) {
             return <progress className="progress w-56"></progress>
         }
     }
+
+
     return (
         <div>
 

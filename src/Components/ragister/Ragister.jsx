@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContex } from "../../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
 
@@ -35,6 +35,11 @@ const Ragister = () => {
                 console.log(err.message)
             })
     }
+
+
+    useEffect(() => {
+        document.title = 'ToyStore | Register';
+    }, []);
 
     return (
         <div className="hero min-h-screen bg-base-200">
