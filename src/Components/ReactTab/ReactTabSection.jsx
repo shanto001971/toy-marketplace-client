@@ -24,7 +24,8 @@ const ReactTabSection = () => {
 
     return (
 
-        <Tabs forceRenderTabPanel defaultIndex={1}>
+       <div className="text-center">
+         <Tabs forceRenderTabPanel defaultIndex={1} className={'mt-20'}>
             <TabList cl>
                 <Tab>Sports Car</Tab>
                 <Tab>Truck</Tab>
@@ -106,6 +107,7 @@ const ReactTabSection = () => {
                 </Tabs>
             </TabPanel>
         </Tabs>
+       </div>
 
     );
 };

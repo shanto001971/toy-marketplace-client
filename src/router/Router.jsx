@@ -8,6 +8,7 @@ import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import AllToy from "../Components/AllToy/AllToy";
 import MyToy from "../Components/MyToy/MyToy";
 import UpdateProduct from "../Components/UpdateProduct/UpdateProduct";
+import ViewDetlis from "../Components/ViewDetlis/ViewDetlis";
 
 export const router = createBrowserRouter([
   {
@@ -44,7 +45,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        element: <UpdateProduct/>
+        element: <UpdateProduct />
+      },
+      {
+        path: "/alltoys/:id",
+        element: <ViewDetlis />,
+        loader: ({ params }) => fetch(`http://localhost:5000/alltoys/${params.id}`)
       },
 
 

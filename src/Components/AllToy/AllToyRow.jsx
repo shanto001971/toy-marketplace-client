@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AllToyRow = ({ singleData }) => {
-    // console.log(singleData)
-    const { sellerName, productName, subCategory, price, availableQuantity, photo } = singleData;
+    
+    const { sellerName, productName, subCategory, price, availableQuantity, photo,_id } = singleData;
     return (
         <tr>
             
@@ -26,7 +27,8 @@ const AllToyRow = ({ singleData }) => {
             </td>
             <td>$ {price}</td>
             <th>
-                <button className="btn btn-ghost btn-xs hover:bg-lime-600">details</button>
+            
+            <Link to={`/alltoys/${_id}`}><button className="btn btn-ghost btn-xs hover:bg-lime-600">details</button></Link>
             </th>
         </tr>
     );

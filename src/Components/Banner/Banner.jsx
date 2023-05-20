@@ -2,7 +2,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className='mt-5 p-7 lg:flex gap-10'>
+        <div className='mt-20 p-7 lg:flex gap-10'>
             <div data-aos="fade-right" className="lg:w-1/2">
                 <img src="https://solaroidenergy.com/wp-content/uploads/2023/03/how-much-is-baby-toy-car.jpg" alt="" className='h-96'/>
             </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AllToyRow from './AllToyRow';
+import { FaSearch } from 'react-icons/fa';
 
 const AllToy = () => {
     const [alltoy, setAlltoy] = useState([]);
@@ -28,7 +29,7 @@ const AllToy = () => {
         <div>
             <form onSubmit={handleSearchBtn} className='flex items-center justify-center gap-4 my-6'>
                 <input type="text" name="name" placeholder="Toy name" className="input input-bordered w-full max-w-xs" />
-                <button type='submit' className='btn btn-outline btn-accent'>Search</button>
+                <button type='submit' className='btn btn-outline btn-accent flex gap-3' ><FaSearch/> Search</button>
             </form>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
