@@ -49,7 +49,9 @@ export const router = createBrowserRouter([
       },
       {
         path: "/alltoys/:id",
-        element: <ViewDetlis />,
+        element: <PrivetRoute>
+          <ViewDetlis />
+        </PrivetRoute>,
         loader: ({ params }) => fetch(`http://localhost:5000/alltoys/${params.id}`)
       },
 

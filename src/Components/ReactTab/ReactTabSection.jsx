@@ -25,6 +25,10 @@ const ReactTabSection = () => {
     return (
 
        <div className="text-center">
+        <div className="my-10 border p-5 text-end">
+            <h1 className="text-4xl font-serif">Select Your Favorite Category</h1>
+            <p className="text-2xl font-mono mt-3">Some Best Toy Category is Hare You Can See Your Favorite Toy</p>
+        </div>
          <Tabs forceRenderTabPanel defaultIndex={1} className={'mt-20'}>
             <TabList cl>
                 <Tab>Sports Car</Tab>

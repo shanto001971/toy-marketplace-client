@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const ViewDetlis = () => {
     const data = useLoaderData()
-    
+    console.log(data)
 
     const { photo, subCategory, price, availableQuantity, productName } = data
     return (
@@ -12,28 +12,18 @@ const ViewDetlis = () => {
                 {/* head */}
                 <thead>
                     <tr>
-                        <th>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                            </label>
-                        </th>
                         <th>Name</th>
-                        <th>Category</th>
+                        <th>Category / AvailableQuantity / Rating / Description</th>
                         <th>Price</th>
                     </tr>
                 </thead>
                 <tbody>
                     {/* row 1 */}
                     <tr>
-                        <th>
-                            <label>
-                                <input type="checkbox" className="checkbox" />
-                            </label>
-                        </th>
                         <td>
                             <div className="flex items-center space-x-3">
                                 <div className="avatar">
-                                    <div className="mask mask-squircle w-12 h-12">
+                                    <div className="mask mask-squircle w-40 h-40">
                                         <img src={photo} alt="Avatar Tailwind CSS Component" />
                                     </div>
                                 </div>
@@ -47,6 +37,10 @@ const ViewDetlis = () => {
                             {productName}
                             <br />
                             <span className="badge badge-ghost badge-sm">AvailableQuantity: {availableQuantity}</span>
+                            <span className="badge badge-ghost badge-sm">Rating: {data?.rating}</span>
+                            <br />
+                            <span className="badge badge-ghost badge-sm">Description: {data?.detailDescription}</span>
+                            
                         </td>
                         <td>${price}</td>
                         
