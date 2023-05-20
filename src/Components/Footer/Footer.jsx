@@ -10,8 +10,8 @@ const Footer = () => {
                 </div>
                 <img src="" alt="" />
                 <div>
-                    <span className="footer-title">Services</span>
-                    <a className="link link-hover">Branding</a>
+                    <span className="footer-title">Wabsite Name : Toy Store 3</span>
+                    <a className="link link-hover">copyright : by Toy Store</a>
                     <a className="link link-hover">Design : ToyStore</a>
                     <a className="link link-hover">Marketing And Selling</a>
                     <a className="link link-hover">Advertisement : for grow investment</a>
@@ -20,7 +20,7 @@ const Footer = () => {
                     <span className="footer-title">Company</span>
                     <a className="link link-hover">About us : Admin</a>
                     <a className="link link-hover">Contact : +05555555</a>
-                    <a className="link link-hover">Facebook : ToyStore@</a>
+                    <a href="https://www.facebook.com" className="link link-hover">Facebook : Shanto Islam</a>
                     <a className="link link-hover">Gmail : ToyStore@.com</a>
                 </div>
                 <div>

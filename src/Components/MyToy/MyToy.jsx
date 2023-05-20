@@ -42,13 +42,17 @@ const MyToy = () => {
     return (
         <div>
             <div className="overflow-x-auto w-full">
+                
                 <table className="table w-full">
                     {/* head */}
+                   
                     <thead>
+                        
                         <tr>
-
-                            <th>Product Name</th>
+                            
+                            <th>Edit</th>
                             <th>Category / availableQuantity</th>
+                            <th>Category</th>
                             <th>Price</th>
                             <th>Details</th>
                         </tr>

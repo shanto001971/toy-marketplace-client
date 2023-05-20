@@ -8,11 +8,10 @@ import  { Toaster } from 'react-hot-toast';
 const Layout = () => {
     return (
         <div>
-            <Navbar />
+            <Navbar  />
             <Toaster/>
             <Outlet></Outlet>
             <Footer/>
-            
         </div>
     );
 };

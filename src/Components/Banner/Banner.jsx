@@ -15,9 +15,9 @@ const Banner = () => {
             </div>
             <div data-aos="fade-left" className=" flex justify-center items-center lg:w-1/2">
                 <div className="text-center lg:text-start mt-8 lg:mt-0">
-                <h1 className='text-2xl'>How Much is Baby Toy Car</h1>
-                <p>$5,580.84 NGN <span className='text-lime-500'> In stock</span> Brand: Solaroid Energy</p>
-                <small>Baby Toy Car is a cute toy that is made of durable plastic and features a soft, cuddly body. It's the perfect size for little hands to grasp, and it ...</small>
+                <h1 className='text-4xl font-serif'>How Much is Baby Toy Car</h1>
+                <p className='font-thin'>$5,580.84 NGN <span className='text-lime-500'> In stock</span> Brand: Solaroid Energy</p>
+                <small className='font-thin'>Baby Toy Car is a cute toy that is made of durable plastic and features a soft, cuddly body. It's the perfect size for little hands to grasp, and it ...</small>
                 <br />
                 <button className='px-6 py-2 text-blue-100 rounded bg-gradient-to-r from-blue-600 to-blue-400 mt-5 flex justify-center items-center gap-5'>Explore <FaArrowRight/></button>
                 </div>

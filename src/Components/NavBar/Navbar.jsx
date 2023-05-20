@@ -15,7 +15,7 @@ const Navbar = () => {
             })
     }
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -24,8 +24,9 @@ const Navbar = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <Link className="font-serif" to="/"><li>Home</li></Link>
                         <Link className="font-serif" to="/allToy"><li>All Toy</li></Link>
-                        <Link className="font-serif" to="/addtoy"><li>Add A Toy</li></Link>
-                        {user?.email ? <Link  className="font-serif" to="/mytoy"><li>My Toy</li></Link>
+
+                        {user?.email ? <><Link className="font-serif" to="/addtoy"><li>Add A Toy</li></Link>
+                            <Link className="font-serif" to="/mytoy"><li>My Toy</li></Link></>
                             : <></>}
                         <Link className="font-serif" to="/blog"><li>Blogs</li></Link>
                     </ul>
@@ -40,10 +41,11 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal flex gap-3">
                     <Link className="font-serif" to="/"><li>Home</li></Link>
                     <Link className="font-serif" to="/allToy"><li>All Toy</li></Link>
-                    <Link className="font-serif" to="/addtoy"><li>Add A Toy</li></Link>
-                    {user?.email ? <Link className="font-serif" to="/mytoy"><li>My Toy</li></Link>
+
+                    {user?.email ? <><Link className="font-serif" to="/addtoy"><li>Add A Toy</li></Link>
+                        <Link className="font-serif" to="/mytoy"><li>My Toy</li></Link></>
                         : <></>}
-                    <Link className="font-serif" to="/"><li>Blogs</li></Link>
+                    <Link className="font-serif" to="/blog"><li>Blogs</li></Link>
                 </ul>
             </div>
             <div className="navbar-end">

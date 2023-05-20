@@ -10,6 +10,7 @@ import MyToy from "../Components/MyToy/MyToy";
 import UpdateProduct from "../Components/UpdateProduct/UpdateProduct";
 import ViewDetlis from "../Components/ViewDetlis/ViewDetlis";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
+import Blog from "../Components/BlogSection/Blog";
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <UpdateProduct />
+      },
+      {
+        path: "/blog",
+        element: <Blog/>
       },
       {
         path: "/alltoys/:id",
