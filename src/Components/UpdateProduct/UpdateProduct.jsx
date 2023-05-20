@@ -80,7 +80,7 @@ const UpdateProduct = () => {
 
 
                         <div className="form-control mt-6">
-                            <button type='submit' className="btn bg-indigo-400">Update Product</button>
+                            <button type='submit' className="btn bg-indigo-400">Update Toy</button>
                         </div>
                     </form>
                 </div>

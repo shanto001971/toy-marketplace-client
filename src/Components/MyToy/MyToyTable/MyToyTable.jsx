@@ -10,7 +10,7 @@ const MyToyTable = ({ singleData, handleRemove }) => {
 
             <th>
                 <label className=''>
-                    <Link to={`/alltoys/${_id}`} className='mb-10'><FaPen /></Link>
+                    <Link to={`/alltoys/my/${_id}`} className='mb-10'><FaPen /></Link>
                 </label>
                 <br />
                 <label className=''>
