@@ -1,10 +1,12 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContex } from "../../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 
 const Ragister = () => {
     const { createUser, profileUpgrade,setUser } = useContext(AuthContex);
+    const [error, setError] = useState("");
 
 
     const handelRegister = (event) => {
@@ -21,8 +23,9 @@ const Ragister = () => {
                 setUser(result.user)
             })
             .catch((err) => {
-                console.log(err)
+                setError(err.message)
             })
+            toast(error)
     }
     const UpdateUserProfile = (name, photoURL) => {
         const profile = {
@@ -32,7 +35,7 @@ const Ragister = () => {
         profileUpgrade(profile)
             .then(() => { })
             .catch((err) => {
-                console.log(err.message)
+                setError(err.message)
             })
     }
 
