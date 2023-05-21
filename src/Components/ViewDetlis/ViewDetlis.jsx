@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import StarRatings from 'react-star-ratings';
 
 
 const ViewDetlis = () => {
@@ -46,7 +47,12 @@ const ViewDetlis = () => {
                             {productName}
                             <br />
                             <span className="badge badge-ghost badge-sm">AvailableQuantity: {availableQuantity}</span>
-                            <span className="badge badge-ghost badge-sm">Rating: {data?.rating}</span>
+                            <span className="badge badge-ghost badge-sm"> <StarRatings
+                                rating={data?.rating}
+                                starRatedColor="orange"
+                                starDimension="20px"
+                                starSpacing="2px"
+                            /></span>
                             <br />
                             <span className="badge badge-ghost badge-sm">Description: {data?.detailDescription}</span>
                             <span className="badge badge-ghost badge-sm">Email: {data?.email}</span>
