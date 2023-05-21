@@ -51,9 +51,9 @@ const Navbar = () => {
             <div className="navbar-end">
                 {user?.email ? <div className="flex gap-3">
                     <img title={user?.displayName} src={user.photoURL} alt="" className="w-10 h-10 rounded-full" />
-                    <button className="btn bg-sky-400 hover:bg-sky-500" onClick={handelLogOut}><Link className="font-thin">LogOut</Link></button>
+                    <button className="px-6 py-2 mx-auto text-blue-100 rounded bg-gradient-to-r from-blue-600 to-blue-400" onClick={handelLogOut}><Link className="font-thin">LogOut</Link></button>
 
-                </div> : <button className="btn bg-emerald-400 w-20 hover:bg-emerald-500 bg-gradient-to-br"><Link className="font-thin" to="/login">Login</Link></button>}
+                </div> : <button className="px-6 py-2 mx-auto text-blue-100 rounded bg-gradient-to-r from-blue-600 to-blue-400"><Link className="font-thin" to="/login">Login</Link></button>}
 
             </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
+
 const ViewDetlis = () => {
     const data = useLoaderData()
     // console.log(data)
@@ -16,6 +17,7 @@ const ViewDetlis = () => {
     return (
         <div className="overflow-x-auto w-full my-40">
             <table className="table w-full">
+
                 {/* head */}
                 <thead>
                     <tr>
@@ -48,10 +50,10 @@ const ViewDetlis = () => {
                             <br />
                             <span className="badge badge-ghost badge-sm">Description: {data?.detailDescription}</span>
                             <span className="badge badge-ghost badge-sm">Email: {data?.email}</span>
-                            
+
                         </td>
                         <td>${price}</td>
-                        
+
                     </tr>
                 </tbody>
             </table>

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContex } from '../../AuthProvider/AuthProvider';
 import MyToyTable from './MyToyTable/MyToyTable';
+import Swal from "sweetalert2";
 import { toast } from 'react-hot-toast';
 
 const MyToy = () => {
@@ -8,7 +9,7 @@ const MyToy = () => {
     const [myToy, setMyToy] = useState([]);
     const [lod, setLod] = useState(false);
 
-    const url = `http://localhost:5000/toys/my?email=${user?.email}`;
+    const url = `https://toy-story-3-server-shanto001971.vercel.app/toys/my?email=${user?.email}`;
 
     console.log(url)
 
@@ -16,26 +17,61 @@ const MyToy = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setMyToy(data))
-    }, [lod])
+    }, [myToy])
 
     const handleRemove = id => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You want to delete your toy!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
 
-        fetch(`http://localhost:5000/toys/my/${id}`, {
-            method: 'DELETE',
+
+                fetch(`https://toy-story-3-server-shanto001971.vercel.app/toys/my/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            setLod(true)
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Toy has been deleted.',
+                                'success'
+
+                            )
+
+                            const remaining = myToy.filter(cof => cof._id !== _id);
+                            setMyToy(remaining);
+                        }
+                    })
+
+            }
         })
-            .then(res => res.json())
-            .then(data => {
-
-                if (data.deletedCount > 0) {
-                    if (data.acknowledged=== true) {
-                        setLod(true)
-                    }
-                    return toast('DELETE Successfuly')
-                    
-
-                }
-            })
     }
+
+    //     fetch(`https://toy-story-3-server-shanto001971.vercel.app/toys/my/${id}`, {
+    //         method: 'DELETE',
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+
+    //             if (data.deletedCount > 0) {
+    //                 if (data.acknowledged=== true) {
+    //                     setLod(true)
+    //                 }
+    //                 return toast('DELETE Successfuly')
+
+
+    //             }
+    //         })
+    // }
 
 
     useEffect(() => {
@@ -46,14 +82,14 @@ const MyToy = () => {
     return (
         <div>
             <div className="overflow-x-auto w-full">
-                
+
                 <table className="table w-full">
                     {/* head */}
-                   
+
                     <thead>
-                        
+
                         <tr>
-                            
+
                             <th>Edit</th>
                             <th>Category / availableQuantity</th>
                             <th>Category</th>

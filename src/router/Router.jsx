@@ -49,7 +49,7 @@ export const router = createBrowserRouter([
       {
         path: "/alltoys/my/:id",
         element: <UpdateProduct />,
-        loader:({params})=>fetch(`http://localhost:5000/alltoys/${params.id}`)
+        loader:({params})=>fetch(`https://toy-story-3-server-shanto001971.vercel.app/alltoys/${params.id}`)
       },
       {
         path: "/blog",
@@ -60,7 +60,7 @@ export const router = createBrowserRouter([
         element: <PrivetRoute>
           <ViewDetlis />
         </PrivetRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/alltoys/${params.id}`)
+        loader: ({ params }) => fetch(`https://toy-story-3-server-shanto001971.vercel.app/alltoys/${params.id}`)
       },
 
 

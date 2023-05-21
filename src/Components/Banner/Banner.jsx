@@ -1,7 +1,11 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+AOS.init();
 
 const Banner = () => {
+    
     return (
         <div className="my-20">
             <div className="t border p-10">

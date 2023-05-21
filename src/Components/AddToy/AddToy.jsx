@@ -36,7 +36,7 @@ const AddToy = () => {
         }
         console.log(postToys)
 
-        fetch('http://localhost:5000/postToy', {
+        fetch('https://toy-story-3-server-shanto001971.vercel.app/postToy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -89,14 +89,14 @@ const AddToy = () => {
                                 <label className="label">
                                     <span className="label-text">Picture URL of the toy</span>
                                 </label>
-                                <input type="text" name="photo" placeholder="Picture URL of the toy" className="input input-bordered w-full" />
+                                <input type="text" name="photo" placeholder="Picture URL of the toy" className="input input-bordered w-full" required />
                             </div>
 
                             <div className="form-control w-full">
                                 <label className="label">
                                     <span className="label-text">seller name</span>
                                 </label>
-                                <input type="text" name="sellerName" placeholder="Name" defaultValue={user?.displayName} className="input input-bordered w-full" />
+                                <input type="text" name="sellerName" placeholder="Name" defaultValue={user?.displayName} className="input input-bordered w-full"/>
                             </div>
 
                         </div>
@@ -113,7 +113,7 @@ const AddToy = () => {
                                 <label className="label">
                                     <span className="label-text">Product Name</span>
                                 </label>
-                                <input type="text" name="productName" placeholder="Name" className="input input-bordered w-full" />
+                                <input type="text" name="productName" placeholder="Name" className="input input-bordered w-full" required/>
                             </div>
 
                         </div>
@@ -143,7 +143,7 @@ const AddToy = () => {
                                 <label className="label">
                                     <span className="label-text">Price</span>
                                 </label>
-                                <input type="text" name="price" placeholder="Price" className="input input-bordered w-full" />
+                                <input type="text" name="price" placeholder="Price" className="input input-bordered w-full" required/>
                             </div>
 
                         </div>
@@ -160,7 +160,7 @@ const AddToy = () => {
                                 <label className="label">
                                     <span className="label-text">Available quantity</span>
                                 </label>
-                                <input type="text" name="availableQuantity" placeholder="Available quantity" className="input input-bordered w-full" />
+                                <input type="text" name="availableQuantity" placeholder="Available quantity" className="input input-bordered w-full" required/>
                             </div>
 
                         </div>
@@ -173,7 +173,7 @@ const AddToy = () => {
 
 
                         <div className="form-control mt-6">
-                            <button type='submit' className="btn btn-primary">Add Toy</button>
+                            <button type='submit' className="px-6 py-2 mx-auto text-blue-100 rounded bg-gradient-to-r from-blue-600 to-blue-400 w-full">Add Toy</button>
                         </div>
                     </form>
                 </div>

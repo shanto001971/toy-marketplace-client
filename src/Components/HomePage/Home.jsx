@@ -6,6 +6,9 @@ import NumberThreeBanner from "../Banner/NumberThreeBanner";
 import { useContext } from "react";
 import { AuthContex } from "../../AuthProvider/AuthProvider";
 import { useEffect } from 'react';
+// import 'aos/dist/aos.css';
+// import Aos from 'aos';
+
 
 
 
@@ -22,6 +25,13 @@ const Home = () => {
             return <progress className="progress w-56"></progress>
         }
     }
+
+    // useEffect(() => {
+    //     Aos.init({
+    //       offset: 200,
+    //       duration: 1000,
+    //     });
+    //   }, [])
 
 
     return (

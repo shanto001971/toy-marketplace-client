@@ -16,7 +16,7 @@ const ReactTabSection = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/subCategory?subCategory=${subCategory}`)
+        fetch(`https://toy-story-3-server-shanto001971.vercel.app/toys/subCategory?subCategory=${subCategory}`)
             .then(res => res.json())
             .then(data => setToysInfo(data))
     }, [subCategory])

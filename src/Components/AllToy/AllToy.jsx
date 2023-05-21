@@ -9,7 +9,7 @@ const AllToy = () => {
     console.log(filterToys)
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys')
+        fetch('https://toy-story-3-server-shanto001971.vercel.app/toys')
             .then(res => res.json())
             .then(data => setAlltoy(data))
     }, []);
@@ -28,7 +28,7 @@ const AllToy = () => {
     useEffect(() => {
         document.title = 'ToyStore | AllToy';
     }, []);
-    
+
     return (
         <div>
             <form onSubmit={handleSearchBtn} className='flex items-center justify-center gap-4 my-6'>
