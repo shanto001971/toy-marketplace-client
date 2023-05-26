@@ -4,7 +4,7 @@ import { FaPen, FaPenAlt, FaTrashAlt } from 'react-icons/fa';
 
 const MyToyTable = ({ singleData, handleRemove }) => {
     const { sellerName, productName, subCategory, price, availableQuantity, photo, _id } = singleData;
-    console.log(singleData)
+    // console.log(singleData)
     return (
         <tr>
 

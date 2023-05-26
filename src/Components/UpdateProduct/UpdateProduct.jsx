@@ -6,7 +6,7 @@ const UpdateProduct = () => {
 
     const data = useLoaderData()
     const { _id, price, availableQuantity, detailDescription } = data
-    console.log(data)
+    // console.log(data)
 
     const handelUpdateData = (event) => {
         event.preventDefault()
@@ -32,7 +32,7 @@ const UpdateProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.modifiedCount) {
+                if (data.modifiedCount >0) {
                     toast('update Successfully')
                 }
             })

@@ -11,13 +11,13 @@ const MyToy = () => {
 
     const url = `https://toy-story-3-server-shanto001971.vercel.app/toys/my?email=${user?.email}`;
 
-    console.log(url)
+    // console.log(url)
 
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
             .then(data => setMyToy(data))
-    }, [myToy])
+    }, [lod])
 
     const handleRemove = id => {
         Swal.fire({
